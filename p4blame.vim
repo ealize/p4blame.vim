@@ -2,7 +2,7 @@
 " Installation: copy to .vim/plugins folder, set the p4pr.pl path correctly
 " p4pr.pl can be obtained from http://public.perforce.com/guest/fredric_fredricson/P4DB/rel/2.1/p4pr.perl
 
-" Would not be possible without Jony Wareing's SvnBlame [ https://github.com/Jonty/svnblame.vim.git ]
+" Would not be possible without Jony Wareing's SvnBlame [ https://github.com/Jonty/svnblame.vim ]
 " author: Sri Doddapanei. github@ealize.com
 
 let p4pr = '/service/bin/p4hist'
