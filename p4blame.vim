@@ -1,10 +1,6 @@
-
-" Installation: copy to .vim/plugins folder, set the p4pr.pl path correctly
-" p4pr.pl can be obtained from http://public.perforce.com/guest/fredric_fredricson/P4DB/rel/2.1/p4pr.perl
-
-" Would not be possible without Jony Wareing's SvnBlame [ https://github.com/Jonty/svnblame.vim ]
-" author: Sri Doddapanei. github@ealize.com
-
+" Please set the p4pr.perl path
+" You can get it from: http://public.perforce.com/guest/fredric_fredricson/P4DB/rel/2.1/p4pr.perl
+" Modified SvnBlame.vim to work with Perforce
 let p4pr = '/service/bin/p4hist'
 
 if !filereadable(p4pr)
@@ -38,7 +34,7 @@ function P4Blame()
     set nowrap
 
     " Blame baby blame
-    let blameSrc = system(g:p4pr . ' ' . thisFile . ' | sed -r -e "s/( *[0-9]+) +([a-zA-Z0-9]+).*/ \1  \2 /"')
+    let blameSrc = system(g:p4pr . ' ' . thisFile . ' | sed 1,2d')
     let blameLines = split(blameSrc, "\n")
     let i = 0
     let blameOutput = ""
